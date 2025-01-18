@@ -60,9 +60,40 @@ function checkNumberCharacter_1() {
 console.log(checkNumberCharacter_1());
 console.log("Your tweet is: " + inputText_1.slice(0, 180));
 
+// 2.2 Capitalization of a string. Basic Level
+
+var name_Angela = "aNgeLA";
+
+// Solution:
+
+name_Angela_array = name_Angela.split("");
+
+function capitalizedNameAngela() {
+  if (
+    name_Angela_array[0] &&
+    name_Angela_array[0].toUpperCase() !== name_Angela_array[0]
+  ) {
+    name_Angela_array[0] = name_Angela_array[0].toUpperCase();
+  }
+
+  for (var i = 1; i < name_Angela_array.length; i++) {
+    if (
+      name_Angela_array[i] === name_Angela_array[i].toUpperCase() &&
+      name_Angela_array[i] !== name_Angela_array[i].toLowerCase()
+    ) {
+      name_Angela_array[i] = name_Angela_array[i].toLowerCase();
+    }
+  }
+}
+
+capitalizedNameAngela();
+console.log("Capitalized name: " + name_Angela_array.join(""));
+
+// Result: Angela
+
 // 3. Capitalization of string
 
-var name = "john mcKeiN";
+var name = "john mcKeIN";
 
 // Solution:
 
@@ -88,6 +119,17 @@ function capitalizeName() {
     }
   }
 
+  if (nameArray.length >= 3) {
+    for (var j = nameArray.length - 3; j < nameArray.length; j++) {
+      if (
+        nameArray[j] === nameArray[j].toUpperCase() &&
+        nameArray[j] !== nameArray[j].toLowerCase()
+      ) {
+        nameArray[j] = nameArray[j].toLowerCase();
+      }
+    }
+  }
+
   var capitalizedName = nameArray.join("");
 
   console.log("Length of the name: " + capitalizedName.length);
@@ -95,7 +137,17 @@ function capitalizeName() {
   return capitalizedName;
 }
 
-// Result: Display: John Mckein
-
 var result = capitalizeName(name);
 console.log("Capitalized name: " + result);
+
+// Result: Display: John Mckein
+
+// 4. Basic Operations.
+
+agePet = 5;
+
+humanAge = (agePet - 2) * 4 + 21;
+
+console.log("The age of the pet in human years is: " + humanAge);
+
+// Result: The age of the pet in human years is: 33
