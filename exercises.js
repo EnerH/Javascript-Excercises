@@ -151,3 +151,75 @@ humanAge = (agePet - 2) * 4 + 21;
 console.log("The age of the pet in human years is: " + humanAge);
 
 // Result: The age of the pet in human years is: 33
+
+// Notes before moving forward:
+
+function getMilk(money) {
+  var priceBottle = 0.75;
+  var numberOfBottles = Math.floor(money / priceBottle);
+
+  console.log("Buy " + numberOfBottles + " bottles of milk.");
+
+  //Output of the function
+  return money % priceBottle;
+}
+
+var change = getMilk(10.99);
+console.log("Change: $" + change.toFixed(2));
+
+// 5 BMI Calculator
+
+var weight = 92; // Weight in kg
+var height = 1.85; // Height in meters
+
+// Solution:
+
+function bmiCalculator(weight, height) {
+  // Calculate BMI
+  var equationBMI = weight / (height * height);
+
+  // Return BMI rounded to two decimal places
+  return equationBMI;
+}
+
+// Results: Display the BMI value
+var returnedBMI = bmiCalculator(weight, height);
+console.log("Your BMI is: " + returnedBMI.toFixed(2));
+
+// 6. Random Number Generator for Compatibility Calculator
+
+var namePerson1 = "Frank";
+var namePerson2 = "Cindy";
+
+// Solution:
+
+function compatibilityCalculator(namePerson1, namePerson2) {
+  var randomNumber = Math.floor(Math.random() * 100) + 1; // Random number between 1 and 100
+
+  if (randomNumber >= 75) {
+    return (
+      "Congratulations! " +
+      namePerson1 +
+      " and " +
+      namePerson2 +
+      " are compatible with a " +
+      randomNumber +
+      "% compatibility rate."
+    );
+  } else {
+    return (
+      "Swipe next! " +
+      namePerson1 +
+      " and " +
+      namePerson2 +
+      " are compatible with a " +
+      randomNumber +
+      "% low compatibility rate."
+    );
+  }
+}
+
+// Results: Display the compatibility percentage
+
+var compatibility = compatibilityCalculator(namePerson1, namePerson2);
+console.log(compatibility);
