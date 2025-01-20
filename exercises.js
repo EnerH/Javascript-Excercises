@@ -206,6 +206,30 @@ function compatibilityCalculator(namePerson1, namePerson2) {
       randomNumber +
       "% compatibility rate."
     );
+  }
+
+  if (randomNumber >= 25 && randomNumber < 75) {
+    return (
+      "Sorry! " +
+      namePerson1 +
+      " and " +
+      namePerson2 +
+      " are not compatible with a " +
+      randomNumber +
+      "% low compatibility rate. You can do better."
+    );
+  }
+
+  if (randomNumber <= 25) {
+    return (
+      "Sorry! " +
+      namePerson1 +
+      " and " +
+      namePerson2 +
+      " are not compatible with a " +
+      randomNumber +
+      "% low compatibility rate. Whcih means you should swipe left!"
+    );
   } else {
     return (
       "Swipe next! " +
@@ -223,3 +247,49 @@ function compatibilityCalculator(namePerson1, namePerson2) {
 
 var compatibility = compatibilityCalculator(namePerson1, namePerson2);
 console.log(compatibility);
+
+// 7. BMI Calculator with Interpretation
+
+function bmiCalculator_IF(weight, height) {
+  var bmiResult_IF = weight / (height * height);
+
+  if (Math.floor(bmiResult_IF) < 18.5) {
+    return (
+      "Your BMI is " + Math.floor(bmiResult_IF) + ", so you are underweight."
+    );
+  }
+
+  if (Math.floor(bmiResult_IF) > 24.9) {
+    return (
+      "Your BMI is " + Math.floor(bmiResult_IF) + ", so you are overweight."
+    );
+  }
+
+  if (Math.floor(bmiResult_IF) >= 18.5 && Math.floor(bmiResult) <= 24.9) {
+    return (
+      "Your BMI is " +
+      Math.floor(bmiResult_IF) +
+      ", so you have a normal weight."
+    );
+  }
+}
+
+var bmiResult_IF = bmiCalculator_IF(weight, height);
+console.log(bmiResult_IF);
+
+// 8. Leap Year Calculator
+
+function isLeapYear(year) {
+  if (year % 4 === 0) {
+    if (year % 100 !== 0 || year % 400 === 0) {
+      return year + " is a leap year.";
+    } else {
+      return year + " is not a leap year.";
+    }
+  } else {
+    return year + " is not a leap year.";
+  }
+}
+
+var year = Math.floor(Math.random() * 3000) + 1;
+console.log(isLeapYear(year));
