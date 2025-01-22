@@ -265,7 +265,7 @@ function bmiCalculator_IF(weight, height) {
     );
   }
 
-  if (Math.floor(bmiResult_IF) >= 18.5 && Math.floor(bmiResult) <= 24.9) {
+  if (Math.floor(bmiResult_IF) >= 18.5 && Math.floor(bmiResult_IF) <= 24.9) {
     return (
       "Your BMI is " +
       Math.floor(bmiResult_IF) +
@@ -291,5 +291,46 @@ function isLeapYear(year) {
   }
 }
 
-var year = Math.floor(Math.random() * 3000) + 1;
+var year = Math.floor(Math.random() * 3001);
 console.log(isLeapYear(year));
+
+// Explanation of Array
+
+var guestList = ["Angela", "Jack", "Pam", "James", "Lara", "Jason"];
+var guestName = "James";
+
+if (guestList.includes(guestName)) {
+  console.log("Welcome " + guestName + "!");
+} else {
+  console.log("Sorry, maybe next time.");
+}
+
+// 9. FizzBuzz Challenge
+
+function fizzBuzz() {
+  for (var i = 1; i <= 20; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log("FizzBuzz");
+    } else if (i % 3 === 0) {
+      console.log("Fizz");
+    } else if (i % 5 === 0) {
+      console.log("Buzz");
+    } else {
+      console.log(i);
+    }
+  }
+}
+
+fizzBuzz();
+
+// 10. Who's Buying Lunch?
+
+names = ["Angela", "Ben", "Jenny", "Michael", "Chloe"];
+
+function whosPaying(names) {
+  var numberOfPeople = names.length;
+  var randomPerson = Math.floor(Math.random() * numberOfPeople);
+  return names[randomPerson] + " is going to buy lunch today!";
+}
+
+console.log(whosPaying(names));
