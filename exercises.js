@@ -395,23 +395,11 @@ console.log(whosPaying(names));
 // 11. Fibonacci Sequence
 
 function fibonacciGenerator(n) {
-  const result = [];
-  if (n <= 0) return result;
-
-  let a = 0,
-    b = 1;
-  result.push(a);
-  if (n === 1) return result;
-
-  result.push(b);
-  for (let i = 2; i < n; i++) {
-    const c = a + b;
-    result.push(c);
-    a = b;
-    b = c;
+  let result = [];
+  for (let [a, b] = [0, 1]; n-- > 0; [a, b] = [b, a + b]) {
+    result.push(a);
   }
-
   return result;
 }
 
-console.log(fibonacciGenerator(10));
+console.log(fibonacciGenerator(20));
