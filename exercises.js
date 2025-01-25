@@ -323,6 +323,63 @@ function fizzBuzz() {
 
 fizzBuzz();
 
+// 9.1. FizzBuzz Challenge with a while loop
+
+var j = 1;
+
+function fizzBuzzWhile() {
+  while (j <= 100) {
+    if (j % 3 === 0 && j % 5 === 0) {
+      console.log("FizzBuzz");
+    } else if (j % 3 === 0) {
+      console.log("Fizz");
+    } else if (j % 5 === 0) {
+      console.log("Buzz");
+    } else {
+      console.log(j);
+    }
+    j++;
+  }
+}
+
+fizzBuzzWhile();
+
+// 9.2. Beer on the wall song
+
+var ij = 1;
+
+function beerOnTheWall() {
+  while (ij <= 100) {
+    if (ij === 1) {
+      console.log(
+        ij + " bottle of beer on the wall, " + ij + " bottle of beer."
+      );
+      console.log(
+        "Take one down and pass it around, no more bottles of beer on the wall."
+      );
+    } else if (ij === 0) {
+      console.log(
+        "No more bottles of beer on the wall, no more bottles of beer."
+      );
+      console.log(
+        "Go to the store and buy some more, 99 bottles of beer on the wall."
+      );
+    } else {
+      console.log(
+        ij + " bottles of beer on the wall, " + ij + " bottles of beer."
+      );
+      console.log(
+        "Take one down and pass it around, " +
+          (ij - 1) +
+          " bottles of beer on the wall."
+      );
+    }
+    ij++;
+  }
+}
+
+beerOnTheWall();
+
 // 10. Who's Buying Lunch?
 
 names = ["Angela", "Ben", "Jenny", "Michael", "Chloe"];
@@ -334,3 +391,27 @@ function whosPaying(names) {
 }
 
 console.log(whosPaying(names));
+
+// 11. Fibonacci Sequence
+
+function fibonacciGenerator(n) {
+  const result = [];
+  if (n <= 0) return result;
+
+  let a = 0,
+    b = 1;
+  result.push(a);
+  if (n === 1) return result;
+
+  result.push(b);
+  for (let i = 2; i < n; i++) {
+    const c = a + b;
+    result.push(c);
+    a = b;
+    b = c;
+  }
+
+  return result;
+}
+
+console.log(fibonacciGenerator(10));
